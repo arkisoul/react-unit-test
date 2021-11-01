@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test cases for container component container component is render properly 1`] = `
+Array [
+  <div
+    className="container"
+  >
+    <input
+      name="username"
+      onChange={[Function]}
+      type="text"
+    />
+    <input
+      name="password"
+      onChange={[Function]}
+      type="password"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Click me
+    </button>
+    <Counter
+      count={0}
+    />
+  </div>,
+]
+`;
