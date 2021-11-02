@@ -1,28 +1,39 @@
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import Container from "./Container";
 
 describe("test cases for container component", () => {
-  const onClickHandler = jest.fn();
-  const ContainerComponent = shallow(<Container onClick={onClickHandler} />);
   it("container component is render properly", () => {
+    const ContainerComponent = shallow(<Container />);
     expect(ContainerComponent.getElements()).toMatchSnapshot();
   });
   
-  it("container component should have a button element", () => {
-    const buttonElement = ContainerComponent.find("button");
-    expect(buttonElement.length).toEqual(1);
-    expect(buttonElement.text()).toEqual('Click me');
-  });
+  // it("container component should have a button element", () => {
+  //   const ContainerComponent = mount(<Container />);
+  //   const buttonElement = ContainerComponent.find("button");
+  //   expect(buttonElement.length).toEqual(2);
+  //   expect(buttonElement.at(0).text()).toEqual("Click me");
+  //   expect(buttonElement.at(1).text()).toEqual("Set name");
+  //   ContainerComponent.unmount()
+  // });
 
-  it('onclick of button should update clicked state from false to true', () => {
+  it("onclick of button should update clicked state from false to true", () => {
+    const ContainerComponent = shallow(<Container />);
     const buttonElement = ContainerComponent.find("button");
-    expect(ContainerComponent.state('clicked')).toEqual(false)
-    // buttonElement.props().onClick(onClickHandler)
+    expect(ContainerComponent.state("clicked")).toEqual(false);
     buttonElement.simulate("click");
     expect(ContainerComponent.state("clicked")).toEqual(true);
-    // expect(onClickHandler).toBeCalledTimes(1);
-  })
+  });
 
+  it("onclick of button should update clicked", () => {
+    const spy = jest
+      .spyOn(Container.prototype, "handleClick")
+      .mockImplementation((a) => a);
+    const ContainerComponent = shallow(<Container />);
+    const buttonElement = ContainerComponent.find("button");
+    buttonElement.simulate("click");
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toBeCalledTimes(1);
+  });
 });
 
 describe('container component input elements', () => {

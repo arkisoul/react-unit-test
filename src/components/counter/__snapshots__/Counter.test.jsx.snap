@@ -1,23 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test suit for counter component should render properly 1`] = `
-Array [
-  <div
-    className="counter"
-  >
-    <h1
-      className="count"
-    />
-    <p
-      className="name"
-    >
-      hello
-    </p>
-    <button
-      onClick={[Function]}
-    >
-      Set name
-    </button>
-  </div>,
-]
+exports[`<CounterCompnent /> should render post data 1`] = `
+"<Counter>
+  <div className=\\"counter\\">
+    <h3>
+      0
+    </h3>
+    <span>
+      <button id=\\"count-up\\" className=\\"btn btnup\\" type=\\"button\\" onClick={[Function: incrementCount]}>
+        Count Up
+      </button>
+      <button id=\\"count-down\\" type=\\"button\\" onClick={[Function: decrementCount]}>
+        Count Down
+      </button>
+      <button id=\\"zero-count\\" type=\\"button\\" onClick={[Function: resetCount]}>
+        Zero
+      </button>
+    </span>
+  </div>
+</Counter>"
+`;
+
+exports[`<CounterCompnent /> should render post data 2`] = `
+"<Counter>
+  <div className=\\"counter\\">
+    <h3>
+      0
+    </h3>
+    <span>
+      <button id=\\"count-up\\" className=\\"btn btnup\\" type=\\"button\\" onClick={[Function: incrementCount]}>
+        Count Up
+      </button>
+      <button id=\\"count-down\\" type=\\"button\\" onClick={[Function: decrementCount]}>
+        Count Down
+      </button>
+      <button id=\\"zero-count\\" type=\\"button\\" onClick={[Function: resetCount]}>
+        Zero
+      </button>
+    </span>
+  </div>
+</Counter>"
 `;

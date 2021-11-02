@@ -10,6 +10,10 @@ export default class Container extends React.Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
+    componentDidMount() {
+      
+    }
+
     handleClick() {
         this.setState({clicked: true})
     }

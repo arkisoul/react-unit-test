@@ -1,7 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
+import React from "react";
+import { fetchPosts } from "./service";
 
 function App() {
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const posts = await fetchPosts()
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
