@@ -1,5 +1,5 @@
 import { shallow, mount } from "enzyme";
-import Container from "./Container";
+import Container from "../../../components/container/Container";
 
 describe("test cases for container component", () => {
   it("container component is render properly", () => {

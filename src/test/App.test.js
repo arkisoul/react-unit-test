@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { shallow } from "enzyme";
-import App from "./App";
+import App from "../App";
 import axios from "axios";
-import { fetchPosts, fetchSinglePost } from "./service";
+import { fetchPosts, fetchSinglePost } from "../service";
 
 jest.mock("axios");
 

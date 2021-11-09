@@ -1,7 +1,7 @@
 import React from "react";
 import Enzyme from "enzyme";
 import renderer from "react-test-renderer";
-import CounterComponent from "./Counter";
+import CounterComponent from "../../../components/counter/Counter";
 import axios from "axios";
 import { act } from "@testing-library/react";
 
